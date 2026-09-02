@@ -16,7 +16,7 @@ new class extends Component
                 'required',
                 'string',
                 'max:255',
-                'unique:school_levels,name,' . $this->editingId,
+                'unique:school_levels,name,'.$this->editingId,
             ],
         ]);
 

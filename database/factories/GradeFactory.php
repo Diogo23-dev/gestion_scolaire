@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\Grade;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Enrollment;
+use App\Models\Grade;
 use App\Models\Subject;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends Factory<Grade>

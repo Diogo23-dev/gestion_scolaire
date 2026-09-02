@@ -12,10 +12,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::livewire('school-levels', 'school-levels.index')
         ->name('school-levels.index');
-        
+
     Route::livewire('/school-classes', 'school-classes.index')
         ->name('school-classes.index');
-        
+
     Route::livewire('/students', 'students.index')
         ->name('students.index');
 

@@ -12,7 +12,9 @@ new class extends Component
     public ?int $editingId = null;
 
     public $student_id = '';
+
     public $class_id = '';
+
     public $school_year_id = '';
 
     public function save(): void

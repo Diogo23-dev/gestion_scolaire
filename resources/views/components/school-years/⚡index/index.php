@@ -97,6 +97,7 @@ new class extends Component
             ]);
 
             session()->flash('success', 'L’année scolaire a été désactivée.');
+
             return;
         }
 

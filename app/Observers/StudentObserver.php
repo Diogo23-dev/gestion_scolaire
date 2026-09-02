@@ -13,7 +13,7 @@ class StudentObserver
     public function creating(Student $student): void
     {
         do {
-            $matricule = 'STU-' . strtoupper(Str::random(6));
+            $matricule = 'STU-'.strtoupper(Str::random(6));
         } while (Student::where('matricule', $matricule)->exists());
 
         $student->matricule = $matricule;

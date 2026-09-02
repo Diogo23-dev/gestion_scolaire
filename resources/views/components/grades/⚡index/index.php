@@ -67,7 +67,7 @@ new class extends Component
 
     private function loadClasses(): void
     {
-        if (!$this->school_year_id) {
+        if (! $this->school_year_id) {
             $this->classes = collect();
 
             return;
@@ -83,7 +83,7 @@ new class extends Component
 
     private function loadStudents(): void
     {
-        if (!$this->school_year_id || !$this->class_id) {
+        if (! $this->school_year_id || ! $this->class_id) {
             $this->students = collect();
 
             return;
@@ -108,9 +108,9 @@ new class extends Component
     private function loadGrades(): void
     {
         if (
-            !$this->school_year_id ||
-            !$this->class_id ||
-            !$this->subject_id
+            ! $this->school_year_id ||
+            ! $this->class_id ||
+            ! $this->subject_id
         ) {
             return;
         }
@@ -131,7 +131,7 @@ new class extends Component
                 ->where('class_id', $this->class_id)
                 ->first();
 
-            if (!$enrollment) {
+            if (! $enrollment) {
                 continue;
             }
 
@@ -166,7 +166,7 @@ new class extends Component
                 ->where('class_id', $this->class_id)
                 ->first();
 
-            if (!$enrollment) {
+            if (! $enrollment) {
                 continue;
             }
 
