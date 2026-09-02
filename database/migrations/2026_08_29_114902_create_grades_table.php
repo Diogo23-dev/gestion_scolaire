@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('enrollment_id');
             $table->foreignId('subject_id');
-            $table->decimal('value', 10, 2);
+            $table->decimal('value', 4, 2);
             $table->timestamps();
+            $table->unique(['enrollment_id', 'subject_id']);
         });
     }
 

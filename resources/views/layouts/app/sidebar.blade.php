@@ -3,24 +3,67 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen bg-white dark:bg-zinc-800">
-        <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
-            <flux:sidebar.header>
+    <body class="min-h-screen bg-white dark:bg-slate-800">
+        <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-slate-50 dark:border-zinc-700 dark:bg-slate-950">
+            {{-- <flux:sidebar.header>
                 <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
                 <flux:sidebar.collapse class="lg:hidden" />
-            </flux:sidebar.header>
+            </flux:sidebar.header> --}}
 
             <flux:sidebar.nav>
                 <flux:sidebar.group :heading="__('Platform')" class="grid">
+
                     <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
+                        {{ __('Tableau de bord') }}
                     </flux:sidebar.item>
+                    
+                    {{-- Scolarité --}}
+                    <flux:sidebar.group icon="academic-cap" expandable heading="Scolarité" class="grid">
+                            {{-- ANNEE --}}
+                        <flux:sidebar.item icon="calendar-date-range" :href="route('school-years.index')" :current="request()->routeIs('school-years.index')" wire:navigate>
+                            {{ __('Années') }}
+                        </flux:sidebar.item>
+
+                        {{-- NIVEAUX --}}
+                        <flux:sidebar.item icon="rectangle-stack" :href="route('school-levels.index')" :current="request()->routeIs('school-levels.index')" wire:navigate>
+                            {{ __('Niveaux') }}
+                        </flux:sidebar.item>
+                        
+                        {{-- CLASSES --}}
+                        <flux:sidebar.item icon="building-library" :href="route('school-classes.index')" :current="request()->routeIs('school-classes.index')" wire:navigate>
+                            {{ __('Classes') }}
+                        </flux:sidebar.item>
+
+                        {{-- Elève --}}
+                        <flux:sidebar.item icon="users" :href="route('students.index')" :current="request()->routeIs('students.index')" wire:navigate>
+                            {{ __('Élèves') }}
+                        </flux:sidebar.item>
+
+                    </flux:sidebar.group>
+                    
+                    
+                    
+                    {{-- Matières --}}
+                    <flux:sidebar.item icon="book-open" :href="route('subjects.index')" :current="request()->routeIs('subjects.index')" wire:navigate>
+                        {{ __('Matières') }}
+                    </flux:sidebar.item>
+                    
+                    {{-- Inscriptions --}}
+                    <flux:sidebar.item icon="clipboard-document-check" :href="route('enrollments.index')" :current="request()->routeIs('enrollments.index')" wire:navigate>
+                        {{ __('Inscriptions') }}
+                    </flux:sidebar.item>
+                    
+                    {{-- Notes --}}
+                    <flux:sidebar.item icon="plus" :href="route('grades.index')" :current="request()->routeIs('grades.index')" wire:navigate>
+                        {{ __('Notes') }}
+                    </flux:sidebar.item>
+                    
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 
             <flux:spacer />
 
-            <flux:sidebar.nav>
+            {{-- <flux:sidebar.nav>
                 <flux:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
                     {{ __('Repository') }}
                 </flux:sidebar.item>
@@ -28,7 +71,7 @@
                 <flux:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
                     {{ __('Documentation') }}
                 </flux:sidebar.item>
-            </flux:sidebar.nav>
+            </flux:sidebar.nav> --}}
 
             <x-desktop-user-menu class="hidden lg:block" :name="auth()->user()->name" />
         </flux:sidebar>

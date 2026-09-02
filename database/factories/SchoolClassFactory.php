@@ -1,0 +1,33 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\SchoolClass;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\SchoolLevel;
+
+/**
+ * @extends Factory<SchoolClass>
+ */
+class SchoolClassFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => fake()->randomElement([
+                '1ère Année',
+                '2ème Année',
+                '3ème Année',
+                '4ème Année',
+                '5ème Année',
+                '6ème Année',
+            ]),
+            'level_id' => SchoolLevel::factory(),
+        ];
+    }
+}
