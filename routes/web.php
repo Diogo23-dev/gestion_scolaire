@@ -5,7 +5,10 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome')->name('home');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
+    // Route::view('dashboard', 'dashboard')->name('dashboard');
+
+    Route::livewire('dashboard', 'dashboard')
+        ->name('dashboard');
 
     Route::livewire('school-years', 'school-years.index')
         ->name('school-years.index');
