@@ -200,7 +200,7 @@ laravel13livewire/
 ### 1. Cloner le projet
 
 ```bash
-git clone https://github.com/VOTRE-USERNAME/VOTRE-REPOSITORY.git
+git clone https://github.com/Diogo23-dev/gestion_scolaire.git
 ```
 
 Puis :
@@ -292,19 +292,13 @@ php artisan migrate:fresh --seed
 Lancer le serveur Laravel :
 
 ```bash
-php artisan serve
+composer run dev
 ```
 
 Puis ouvrir :
 
 ```text
 http://127.0.0.1:8000
-```
-
-Pour le développement frontend :
-
-```bash
-npm run dev
 ```
 
 ---
